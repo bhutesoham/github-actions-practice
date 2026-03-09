@@ -4,7 +4,7 @@ on:
 
 jobs:
   greet:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout the code 
