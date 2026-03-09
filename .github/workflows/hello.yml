@@ -20,4 +20,4 @@ jobs:
         run: echo "The current time is ${{ env.NOW }}"
 
       - name: Print current git branch
-        run: "Current git branch is ${{ github.ref_name }}"
+        run: echo "Current git branch is ${{ github.ref_name }}"
