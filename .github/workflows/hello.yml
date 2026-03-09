@@ -12,3 +12,10 @@ jobs:
 
       - name: Print Hello
         run: echo "Hello from GitHub Actions" 
+      
+      - name: Set current date
+        run: echo "NOW=$(date + '%Y-%m-%d%H:%M:%S')" 
+
+      - name: Print current date and time
+        run: echo "The current time is $NOW"
+        
