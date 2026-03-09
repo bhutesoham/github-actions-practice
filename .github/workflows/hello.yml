@@ -18,4 +18,7 @@ jobs:
 
       - name: Print current date and time
         run: echo "The current time is $NOW"
+
+      - name: Print current git branch
+        run: echo "Current git branch is ${{ github.ref_name }}"
         
