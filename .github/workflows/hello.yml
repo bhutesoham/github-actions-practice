@@ -14,11 +14,10 @@ jobs:
         run: echo "Hello from GitHub Actions" 
       
       - name: Set current date
-        run: echo "NOW=$(date + '%Y-%m-%d%H:%M:%S')" 
+        run: echo "NOW=$(date '+%Y-%m-%d-%H-%M-%S')" 
 
       - name: Print current date and time
         run: echo "The current time is $NOW"
 
       - name: Print current git branch
-        run: echo "Current git branch is ${{ github.ref_name }}"
-        
+        run: "Current git branch is ${{ github.ref_name }}"
