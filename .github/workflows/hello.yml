@@ -24,8 +24,8 @@ jobs:
 
       - name: List the files in the repo
         run: |
-        #!/bin/bash
-        ls -la
+          #!/bin/bash
+          ls -la
 
       - name: Print OS using context
         run: echo "The operating system is ${{ runner.os }}"
