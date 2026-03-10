@@ -5,12 +5,11 @@ on:
 
 jobs:
 
-  deploy:
-      environment:
-         DOCKERHUB_USER: {{ vars.DOCKERHUB_USER }}
+   deploy:
+      env:
+         DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
       runs-on: self-hosted
-
-    steps:
+      steps:
       - name: checkout code
         uses: actions/checkout@v4
 
