@@ -13,11 +13,11 @@ on:
           - production
 
 jobs:
-  run manually:
+  run-manually:
     
     runs-on: ubuntu-latest
 
     steps:
        - name: Print the input value
          run: | 
-         echo "Environment input: ${{ github.event.inputs.environment }}"
+            echo "Environment input: ${{ github.event.inputs.environment }}"
