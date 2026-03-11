@@ -12,9 +12,9 @@ jobs:
         matrix:
           python-version: ["3.10","3.11","3.12"] 
           os: [ubuntu-latest, windows-latest]
-        exclude:
-          - os: windows-latest
-            python-version: 3.11  # This specific combination will be skipped
+           exclude:
+            - os: windows-latest
+              python-version: 3.11  # This specific combination will be skipped
     runs-on: ${{ matrix.os }}   
     steps:  
         - name: Code checkout from Github
