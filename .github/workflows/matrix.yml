@@ -20,6 +20,12 @@ jobs:
         - name: Code checkout from Github
           uses: actions/checkout@v4
 
+        - name: Intentionally fail on windows-latest
+          if: matrix.os == windows-latest
+           run: |
+            echo "Simulation error on windows"
+            exit 1
+
         - name: setup python ${{ matrix.python-version }}
           uses: actions/setup-python@v5
           with:
