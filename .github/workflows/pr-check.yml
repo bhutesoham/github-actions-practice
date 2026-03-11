@@ -5,9 +5,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-
-  runs-on: ubuntu-latest
-  steps:  
+  raise-pr:
+    runs-on: ubuntu-latest
+    steps:  
         - name: Code checkout from Github
           uses: actions/checkout@v4
 
