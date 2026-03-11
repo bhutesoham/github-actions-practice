@@ -22,7 +22,7 @@ jobs:
 
         - name: Intentionally fail on windows-latest
           if: matrix.os == windows-latest
-           run: |
+          run: |
             echo "Simulation error on windows"
             exit 1
 
