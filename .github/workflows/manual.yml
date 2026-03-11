@@ -12,7 +12,7 @@ on:
           - staging
           - production
 
-job:
+jobs:
   run manually:
     
     runs-on: ubuntu-latest
