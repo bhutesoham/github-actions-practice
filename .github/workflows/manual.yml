@@ -19,4 +19,5 @@ job:
 
     steps:
        - name: Print the input value
-         run: echo "Environment input: ${{ github.event.inputs.environment }}"
+         run: | 
+         echo "Environment input: ${{ github.event.inputs.environment }}"
