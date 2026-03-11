@@ -18,4 +18,6 @@ jobs:
         uses: docker/setup-compose-action@v2 
 
       - name: deploy with docker compose
-        run: docker compose -f docker-compose.yml down && docker compose -f docker-compose.yml up -d --build
+        run: docker compose -f docker-compose.yml up -d --build 
+
+
