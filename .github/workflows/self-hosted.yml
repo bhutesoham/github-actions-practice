@@ -28,5 +28,5 @@ jobs:
       - name: Create a file and verify it exsists
         run: |
           touch hello.txt
-          [ -f "$FILE" ] && echo "Found it!"
+          [ -f hello.txt ] && echo "Found it!"
           
