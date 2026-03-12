@@ -5,7 +5,9 @@ on:
      branches: 
 
 jobs:
+  
   my-ec2
+
     runs-on: self-hosted
 
     steps:
@@ -19,12 +21,12 @@ jobs:
           hostname
       
       - name: Print working directory
-        runs: |
+        run: |
           echo "Working directory:"
           pwd
 
       - name: Create a file and verify it exsists
-        runs: |
+        run: |
           touch hello.txt
           [ -f "$FILE" ] && echo "Found it!"
           
