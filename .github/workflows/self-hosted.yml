@@ -1,8 +1,7 @@
 name: self_hosted_ec2
 
 on:
-  push:
-     branches: 
+  workflow_dispatch
 
 jobs:
   
