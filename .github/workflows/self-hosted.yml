@@ -1,0 +1,29 @@
+name: self_hosted_ec2
+
+on:
+  push:
+     branches: 
+
+jobs:
+  runs-on: self-hosted
+
+  steps:
+    
+      - name: Name of the OS
+        run: echo "Runner OS is ${{ runner.os }}"
+
+      - name: Runner hostname
+        run: |
+          echo "Runner name :"
+          hostname
+      
+      - name: Print working directory
+        runs: |
+          echo "Working directory:"
+          pwd
+
+      - name: Create a file and verify it exsists
+        runs: |
+          touch hello.txt
+          [ -f "$FILE" ] && echo "Found it!"
+          
