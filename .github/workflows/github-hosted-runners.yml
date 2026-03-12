@@ -1,0 +1,45 @@
+name: github-runners
+
+on:
+  push:
+    branches:
+
+jobs:
+  mac-runner:
+    runs-on: macos-latest
+    
+    steps:
+      - name: Name of the OS
+        run: echo "Runner OS is ${{ RUNNER_OS }}"
+
+      - name: Runner hostname
+        run: echo "Runner hostname is ${{ RUNNER_NAME }}"
+
+      - name: Current user
+        run: echo "Current user who is running the job ${{ GITHUB_ACTOR }}"
+
+  windows-runner:
+  runs-on: windows-latest
+    
+  steps:
+    - name: Name of the OS
+      run: echo "Runner OS is ${{ RUNNER_OS }}"
+
+    - name: Runner hostname
+      run: echo "Runner hostname is ${{ RUNNER_NAME }}"
+
+    - name: Current user
+      run: echo "Current user who is running the job ${{ GITHUB_ACTOR }}"
+
+  ubuntu-runner:
+  runs-on: ubuntu-latest
+    
+  steps:
+    - name: Name of the OS
+      run: echo "Runner OS is ${{ RUNNER_OS }}"
+
+    - name: Runner hostname
+      run: echo "Runner hostname is ${{ RUNNER_NAME }}"
+
+    - name: Current user
+      run: echo "Current user who is running the job ${{ GITHUB_ACTOR }}"
