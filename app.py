@@ -1,4 +1,4 @@
-from flask import Flask, render_template # this app will deploy on ec2
+from flask import Flask, render_template   # this app will deploy on ec2
 app = Flask(__name__)
 
 
