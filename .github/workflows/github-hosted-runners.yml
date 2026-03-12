@@ -54,6 +54,7 @@ jobs:
           echo "git version:"
           git --version
           echo "Node version"
+          node -v
 
       - name: Path for preinstalled softwares
         run: echo "path to find preinstalled versions ${{ runner.tool_cache }}"
