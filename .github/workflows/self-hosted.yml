@@ -6,7 +6,7 @@ on:
 
 jobs:
   
-  my-ec2
+  my-ec2:
 
     runs-on: self-hosted
 
