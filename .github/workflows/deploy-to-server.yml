@@ -4,21 +4,19 @@ name: deploy-to-server
 on:
   workflow_call:
 
-
 jobs:
   deploy:
-      runs_on:ubuntu-latest
-      
-      steps:
+    runs-on: ubuntu-latest
 
-          - name: Copy docker compose file
-            uses:
-          - name: Execute SSH commands on prod EC2 
-            uses: appleboy/ssh-action@v1.0.3
-            with:
-              host: ${{ secrets.EC2_SSH_HOST }}
-              username: ${{ secrets.EC2_SSH_USER }}
-              key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
-            script: |
-              echo "Starting Deployment"
-              mkdir devops
+    steps:
+      - name: Copy docker compose file
+        uses:
+      - name: Execute SSH commands on prod EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_SSH_HOST }}
+          username: ${{ secrets.EC2_SSH_USER }}
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+        script: |
+          echo "Starting Deployment"
+          mkdir devops
