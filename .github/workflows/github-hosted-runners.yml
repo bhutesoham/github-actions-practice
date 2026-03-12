@@ -10,36 +10,36 @@ jobs:
     
     steps:
       - name: Name of the OS
-        run: echo "Runner OS is ${{ RUNNER_OS }}"
+        run: echo "Runner OS is ${{ runner.os }}"
 
       - name: Runner hostname
-        run: echo "Runner hostname is ${{ RUNNER_NAME }}"
+        run: echo "Runner hostname is ${{ runner.name }}"
 
       - name: Current user
-        run: echo "Current user who is running the job ${{ GITHUB_ACTOR }}"
+        run: echo "Current user who is running the job ${{ github.actor }}"
 
   windows-runner:
   runs-on: windows-latest
     
   steps:
     - name: Name of the OS
-      run: echo "Runner OS is ${{ RUNNER_OS }}"
+      run: echo "Runner OS is ${{ runner.os }}"
 
     - name: Runner hostname
-      run: echo "Runner hostname is ${{ RUNNER_NAME }}"
+      run: echo "Runner hostname is ${{ runner.name }}"
 
     - name: Current user
-      run: echo "Current user who is running the job ${{ GITHUB_ACTOR }}"
+      run: echo "Current user who is running the job ${{ github.actor }}"
 
   ubuntu-runner:
   runs-on: ubuntu-latest
     
   steps:
     - name: Name of the OS
-      run: echo "Runner OS is ${{ RUNNER_OS }}"
+      run: echo "Runner OS is ${{ runner.os }}"
 
     - name: Runner hostname
-      run: echo "Runner hostname is ${{ RUNNER_NAME }}"
+      run: echo "Runner hostname is ${{ runner.name }}"
 
     - name: Current user
-      run: echo "Current user who is running the job ${{ GITHUB_ACTOR }}"
+      run: echo "Current user who is running the job ${{ github.actor }}"
