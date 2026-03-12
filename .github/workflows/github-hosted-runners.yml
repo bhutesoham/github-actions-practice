@@ -56,7 +56,7 @@ jobs:
           echo "Node version"
 
       - name: Path for preinstalled softwares
-        run: echo "path to find preinstalled versions ${{ runner.tool.cache }}"
+        run: echo "path to find preinstalled versions ${{ runner.tool_cache }}"
           
 
       - name: Current user
