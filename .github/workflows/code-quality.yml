@@ -2,8 +2,7 @@
 name: code-quality
 
 on:
-  workflow-call
-
+  workflow-call:
 
 jobs:
   validate:
