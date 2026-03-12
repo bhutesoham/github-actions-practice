@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Copy docker compose file
-        uses:
       - name: Execute SSH commands on prod EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
