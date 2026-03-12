@@ -54,8 +54,10 @@ jobs:
           echo "git version:"
           git --version
           echo "Node version"
-          echo "path to find preinstalled versions"
-          ${{ runner.tool.cache }}
+
+      - name: Path for preinstalled softwares
+        run: echo "path to find preinstalled versions ${{ runner.tool.cache }}"
+          
 
       - name: Current user
         run: echo "Current user who is running the job ${{ github.actor }}"
