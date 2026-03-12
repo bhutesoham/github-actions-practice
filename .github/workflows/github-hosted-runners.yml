@@ -1,7 +1,7 @@
 name: github-runners
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   mac-runner:
