@@ -5,9 +5,10 @@ on:
      branches: 
 
 jobs:
-  runs-on: self-hosted
+  my-ec2
+    runs-on: self-hosted
 
-  steps:
+    steps:
     
       - name: Name of the OS
         run: echo "Runner OS is ${{ runner.os }}"
