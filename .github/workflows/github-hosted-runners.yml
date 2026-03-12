@@ -13,8 +13,10 @@ jobs:
         run: echo "Runner OS is ${{ runner.os }}"
 
       - name: Runner hostname
-         echo "Runner hostname is "
-         hostname
+        run: |
+          echo "Runner name :"
+          hostname
+
 
       - name: Current user
         run: echo "Current user who is running the job ${{ github.actor }}"
@@ -27,13 +29,12 @@ jobs:
         run: echo "Runner OS is ${{ runner.os }}"
 
       - name: Runner hostname
-        run: | 
-         echo "Runner hostname is "
-         hostname
+        run: |
+          echo "Runner name :"
+          hostname
 
       - name: Current user
-         echo "Runner hostname is "
-         hostname
+        run: echo "Current user who is running the job ${{ github.actor }}"
 
   ubuntu-runner:
     runs-on: ubuntu-latest
@@ -43,7 +44,9 @@ jobs:
         run: echo "Runner OS is ${{ runner.os }}"
 
       - name: Runner hostname
-        run: echo "Runner hostname is hostname"
+        run: |
+          echo "Runner name :"
+          hostname
 
       - name: Current user
         run: echo "Current user who is running the job ${{ github.actor }}"
