@@ -5,6 +5,7 @@ on:
     brnaches: [main]
 
 jobs:
+  # CI (Continous Integration with Security scanning)
   code-quality:
     uses: ./.github/workflows/code-quality.yml
 
@@ -16,3 +17,9 @@ jobs:
 
   docker-scan:
     uses: ./.github/workflows/docker-lint.yml
+
+  # Build once the security scans are completed
+  build:
+     needs: code-quality,secret scan, dependency scan, docker-scan
+     uses: ./.github/workflow/docker-build-push.yml
+     secrets: inherit
