@@ -4,9 +4,8 @@ name: Image scanner
 on:
   workflow_call:
 
-
 jobs:
-  image-scanner: 
+  image-scanner:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,8 +16,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Trivy Scanner
-        uses: aquasecurity/trivy-action@0.33.1
+        uses: aquasecurity/trivy-action@0.65.0
         with:
-         image-ref:  $ {{ vars.DOCERHUB_USER }}/github-actions-app:${{ github.sha }}
-         severity: 'CRITICAL'
-         exit-code: '1'
+          image-ref: $ {{ vars.DOCERHUB_USER }}/github-actions-app:${{ github.sha }}
+          severity: "CRITICAL"
+          exit-code: "1"
