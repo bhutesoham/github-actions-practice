@@ -1,6 +1,6 @@
 services:
   web:
-    image: ${DOCKERHUB_USER}/github-actions-app:${{ github.sha }}
+    image: ${DOCKERHUB_USER}/github-actions-app:${DOCKER_TAG}
     #build: .
     ports:
       - "80:80"
