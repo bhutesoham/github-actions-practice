@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.EC2_SSH_USER }}
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           source: docker-compose.yml # Comma-separated files/folders
-          target: ~/devops1 # Remote destination path
+          target: ~/devops # Remote destination path
 
       - name: Execute SSH commands on prod EC2 & run the app
         uses: appleboy/ssh-action@v1.0.3
