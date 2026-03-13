@@ -36,9 +36,6 @@ jobs:
 
       - name: Print env variables"
         run: |
-          echo "App name is"
-          ${APP_NAME}
-          echo "ENVIRONMENT is"
-          ${ENVIRONMENT}
-          echo "version is"
-          ${GITHUB_OUTPUT}
+          echo "App name is ${APP_NAME}"   
+          echo "ENVIRONMENT is ${ENVIRONMENT}"
+          echo "version is ${GITHUB_OUTPUT}"
