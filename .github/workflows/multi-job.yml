@@ -11,11 +11,10 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
       - name: Builing the app
-        run: echo "Building the app"
+        run: |
+          echo "Building the app"
+          echo "ENVIRONMENT is ${ENVIRONMENT}"
 
   Test:
     runs-on: ubuntu-latest
