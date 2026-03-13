@@ -9,7 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Execute SSH commands on prod EC2
+      - name: Copy docker compose file
+        uses: actions/checkout@v4
+
+      - name: Execute SSH commands on prod EC2 & create app folder
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_SSH_HOST }}
@@ -18,3 +21,11 @@ jobs:
           script: |
             echo "Starting Deployment"
             mkdir devops1
+
+      - name: Copy files to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          source: docker-compose.yml # Comma-separated files/folders
+          target: ~/devops1 # Remote destination path
+          strip_components: 1 # Optional: Removes leading 'dist/' from path
+
