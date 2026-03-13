@@ -20,11 +20,28 @@ jobs:
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           script: |
             echo "Starting Deployment"
-            mkdir devops1
+            mkdir -p devops1
 
-      - name: Copy files to EC2
+      - name: Copy docker compose file to EC2 prod
         uses: appleboy/scp-action@v0.1.7
         with:
+          host: ${{ secrets.EC2_SSH_HOST }}
+          username: ${{ secrets.EC2_SSH_USER }}
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           source: docker-compose.yml # Comma-separated files/folders
           target: ~/devops1 # Remote destination path
 
+      - name: Execute SSH commands on prod EC2 & run the app
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_SSH_HOST }}
+          username: ${{ secrets.EC2_SSH_USER }}
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          script: |
+            echo "Running App"
+            sudo apt-get install docker.io docker-compose-v2 -y 
+            sudo usermod -aG docker $USER && newgrp docker
+            export DOCKERHUB_USER=${{ vars.DOCKERHUB_USER }}
+            export DOCKER_TAG=${{ github.event.workflow_run.head_sha }}
+            echo ${{ secrets.DOCKERHUB_TOKEN }} | docker loign -u ${{ vars.DOCKERHUB_USER }}  --paswword-stdin
+            cd ~/devops && docker compose down && docker compose build --no-cache && docker compose -f docker-compose.yml up -d --build
