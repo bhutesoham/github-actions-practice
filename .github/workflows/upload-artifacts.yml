@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  runs-on: ubuntu-latest
   create-logs:
+    runs-on: ubuntu-latest
     steps:
       - name: Generate report
         run: echo "Report content" > report.txt # writes to report.txt
