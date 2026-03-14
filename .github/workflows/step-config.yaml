@@ -10,8 +10,9 @@ jobs:
 
     steps:
       - name: Run when branch is Main
-        if: github.ref == 'refs/heads/main' # condition that it should only run when the branch is main
         continue-on-error: true # even if this step fails actions should continue to next step
+        if: github.ref == 'refs/heads/main' # condition that it should only run when the branch is main
+
         run: |
           echo "This is step 1 from main branch"
           exit 1
