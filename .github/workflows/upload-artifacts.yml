@@ -5,7 +5,7 @@ on:
 
 jobs:
   create-logs:
-    runs-on: ubuntu-latest
+    run-on: ubuntu-latest
     steps:
       - name: Generate report
         run: echo "Report content" > report.txt # writes to report.txt
