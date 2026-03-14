@@ -15,3 +15,15 @@ jobs:
         with:
           name: my-report
           path: report.txt
+
+  read-logs:
+    run-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my-report
+          path: download-report
+
+      - name: Read and print the content
+        run: cat download-report/report.txt
