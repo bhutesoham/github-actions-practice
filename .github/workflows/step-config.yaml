@@ -18,7 +18,7 @@ jobs:
           exit 1
 
       - name: Also run when previous step is failed
-        if: failure()
+        if: always() # this step will run even if previous failed
         run: echo "Previous step failed so this runs"
 
   Run-on-PE:
