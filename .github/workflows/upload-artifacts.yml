@@ -1,0 +1,16 @@
+name: upload-artifacts
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-logs:
+    steps:
+      - name: Generate report
+        run: echo "Report content" > report.txt
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-report
+          path: report.txt
