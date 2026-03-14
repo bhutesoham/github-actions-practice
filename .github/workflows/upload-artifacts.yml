@@ -5,7 +5,7 @@ on:
 
 jobs:
   create-logs:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Generate report
         run: echo "Report content" > report.txt # writes to report.txt
@@ -17,7 +17,7 @@ jobs:
           path: report.txt
 
   read-logs:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
