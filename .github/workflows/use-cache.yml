@@ -26,6 +26,7 @@ jobs:
           key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-${{ matrix.python-version }}-
+          # Cache saved with key: Linux-pip-3.10-94e69db670a7aaa67050858651b85015bc060b293dca52795367b8ce6fe23d1b
 
       - name: install dependencies
         run: pip install -r requirements.txt
