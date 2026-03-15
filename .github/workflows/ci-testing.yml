@@ -12,12 +12,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: change file permission
-        run: chmod +x test.sh
+        run: chmod +x Addition.sh
 
       - name: Run the script
-        run: ./test.sh
+        run: ./Addition.sh
 
       - name: Check script behaviour
         env:
           FAIL_PIPELINE: false
-        run: ./test.sh
+        run: ./Addition.sh
