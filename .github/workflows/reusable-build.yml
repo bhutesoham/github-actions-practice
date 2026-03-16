@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: checkout/actions@v4
+        uses: actions/checkout@v4
 
       - name: Building app for environment
         run: echo "Building $app_name for $environment"
