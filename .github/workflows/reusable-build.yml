@@ -1,0 +1,28 @@
+name: reusable-actions
+
+inputs:
+  app_name:
+    required: true
+    default: " "
+  environment: # Key name for the input
+    description: "Environment to run against"
+    required: true
+    default: "staging"
+    type: choice
+    options:
+      - staging
+      - production
+
+jobs:
+  reusable-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: checkout/actions@v4
+
+      - name: Building app for environment
+        run: echo "Building $app_name for $environment"
+
+      - name: Print docker token
+        run: echo "Docker token is ${{ secrets.MY_SECRET_MESSAGE }}"
