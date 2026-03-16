@@ -14,6 +14,10 @@ on:
       docker_token:
         required: true
 
+    outputs:
+      build_version:
+        value: ${{ jobs.reusable-build.outputs.build_version }}
+
 jobs:
   reusable-build:
     runs-on: ubuntu-latest
@@ -34,3 +38,11 @@ jobs:
           else
            echo "Docker token is set:false"
           fi
+
+      - name: Set build version
+        id: set_version
+        run: |
+          echo "build_version=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+
+      - name: Print build version
+        run: echo "Build version is ${{ steps.set_version.outputs.build_version }}"

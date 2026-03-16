@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/reusable-build.yml
+    uses: ./.github/workflows/reusable-build.yml@main
     with:
       app_name: "dependable-workflow-app"
       environment: "production"
@@ -15,3 +15,10 @@ jobs:
         ${{ secrets.DOCKERHUB_TOKEN }}
         # it depends what the user passes here,
         # because in github docker_token does not exist but DOCKERHUB_TOKEN do exist
+
+  Print_version:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Version is ${{ needs.build.outputs.build_version }}"
