@@ -10,6 +10,10 @@ on:
         required: true
         default: "staging"
         type: string
+    secrets:
+      docker_token:
+        required: true
+
 jobs:
   reusable-build:
     runs-on: ubuntu-latest
@@ -21,5 +25,12 @@ jobs:
       - name: Building app for environment
         run: echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }}"
 
-      - name: Print docker token
-        run: echo "Docker token is ${{ secrets.MY_SECRET_MESSAGE }}"
+      - name: Check if the token exists
+        env:
+          DOCKER_TOKEN: ${{ secrets.docker_token }}
+        run: |
+          if [-n "$DOCKER_TOKEN" ];then
+           echo "Docker token is set: true"
+          else
+           echo "Docker token is set:false"
+          fi
