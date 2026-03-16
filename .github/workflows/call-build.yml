@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/reusable-build.yml@main
+    uses: ./.github/workflows/reusable-build.yml
     with:
       app_name: "dependable-workflow-app"
       environment: "production"
