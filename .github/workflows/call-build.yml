@@ -22,4 +22,4 @@ jobs:
 
     steps:
       - name: Access build version
-        run: echo "Version is ${{ needs.build.uses.outputs.build_version }}"
+        run: echo "Version is ${{ needs.build.outputs.build_version }}"
