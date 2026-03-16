@@ -6,6 +6,9 @@ on:
 
 jobs:
   Buil-image-for-CI:
+    env:
+      DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
+      DOCKER_TAG: ${cut -c 1-7 ${{ github.sha }}}
     runs-on: ubuntu-latest
 
     steps:
@@ -25,4 +28,4 @@ jobs:
           push: true
           tags: |
             ${{ vars. DOCKERHUB_USER }}/repo:latest
-            ${{ vars.DOCKERHUB_USER }}/flaskapp-ga-actions:cut -c 1-7 ${{ github.sha }}
+            ${{ vars.DOCKERHUB_USER }}/flaskapp-ga-actions:${DOCKER_TAG}
