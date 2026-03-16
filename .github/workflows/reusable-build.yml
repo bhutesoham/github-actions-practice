@@ -4,11 +4,12 @@ on:
     inputs:
       app_name:
         required: true
-        default: " "
+        type: string
       environment: # Key name for the input
         description: "Environment to run against"
         required: true
         default: "staging"
+        type: string
 jobs:
   reusable-build:
     runs-on: ubuntu-latest
