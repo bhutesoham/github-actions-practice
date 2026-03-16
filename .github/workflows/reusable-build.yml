@@ -21,7 +21,8 @@ on:
 jobs:
   reusable-build:
     runs-on: ubuntu-latest
-
+    outputs:
+      build_version: ${{ steps.set_version.outputs.build_version }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
