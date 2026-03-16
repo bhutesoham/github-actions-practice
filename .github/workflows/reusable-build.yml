@@ -1,17 +1,18 @@
 name: reusable-actions
-
-inputs:
-  app_name:
-    required: true
-    default: " "
-  environment: # Key name for the input
-    description: "Environment to run against"
-    required: true
-    default: "staging"
-    type: choice
-    options:
-      - staging
-      - production
+on:
+workflow_dispatch:
+  inputs:
+    app_name:
+      required: true
+      default: " "
+    environment: # Key name for the input
+      description: "Environment to run against"
+      required: true
+      default: "staging"
+      type: choice
+      options:
+        - staging
+        - production
 
 jobs:
   reusable-build:
