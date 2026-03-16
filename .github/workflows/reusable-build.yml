@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Building app for environment
-        run: echo "Building $app_name for $environment"
+        run: echo "Building ${app_name} for ${environment}"
 
       - name: Print docker token
         run: echo "Docker token is ${{ secrets.MY_SECRET_MESSAGE }}"
