@@ -6,9 +6,6 @@ on:
 
 jobs:
   Buil-image-for-CI:
-    env:
-      DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
-      DOCKER_TAG: ${cut -c 1-7 ${{ github.sha }}}
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +17,9 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Set short commit SHA
+        run: echo "DOCKER_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
 
       - name: Build and Push to Docker Hub
         uses: docker/build-push-action@v6
