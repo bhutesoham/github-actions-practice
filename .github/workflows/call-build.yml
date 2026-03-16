@@ -11,4 +11,7 @@ jobs:
       app_name: "dependable-workflow-app"
       environment: "production"
     secrets:
-      docker_token: ${{ secrets.DOCKERHUB_TOKEN }}
+      docker_token:
+        ${{ secrets.DOCKERHUB_TOKEN }}
+        # it depends what the user passes here,
+        # because in github docker_token does not exist but DOCKERHUB_TOKEN do exist
