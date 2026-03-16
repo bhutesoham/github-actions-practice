@@ -9,11 +9,6 @@ on:
         description: "Environment to run against"
         required: true
         default: "staging"
-        type: choice
-        options:
-          - staging
-          - production
-
 jobs:
   reusable-build:
     runs-on: ubuntu-latest
