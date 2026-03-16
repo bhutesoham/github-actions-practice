@@ -21,4 +21,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Version is ${{ needs.build.outputs.build_version }}"
+      - name: Access build version
+        run: echo "Version is ${{ needs.build.outputs.build_version }}"
