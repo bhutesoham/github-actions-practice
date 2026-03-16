@@ -27,10 +27,10 @@ jobs:
 
       - name: Check if the token exists
         env:
-          DOCKER_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          DOCKER_TOKEN: ${{ secrets.docker_token }}
         run: |
-          if [-n "$DOCKER_TOKEN" ];then
-           echo "Docker token is set: true"
+          if [ -n "$DOCKER_TOKEN" ];then
+           echo "Docker token is set:true"
           else
            echo "Docker token is set:false"
           fi
