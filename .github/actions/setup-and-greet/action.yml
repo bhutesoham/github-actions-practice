@@ -1,0 +1,22 @@
+name: "Hello Greet Action"
+description: "Greets someone and says hello"
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: "World"
+runs:
+  using: "composite"
+  steps:
+    - name: Print the greeting in english
+      shell: bash
+      run: echo "Hello ${{ inputs.who-to-greet }}!"
+
+    - name: Print current date and Runner OS
+      run: |
+        echo "Current date is $(date '+%Y-%m-%d-%H-%M-%S')"
+        echo "Runner OS is $RUNNER_OS"
+
+    - name: Set an output
+      outputs:
+        greeted: true
