@@ -20,7 +20,7 @@ runs:
   steps:
     - name: Print the greeting in english
       shell: bash
-      run: echo "Hello ${{ inputs.who-to-greet }}!"
+      run: echo "Hello ${{ inputs.name }}!"
 
     - name: Print current date and Runner OS
       shell: bash
