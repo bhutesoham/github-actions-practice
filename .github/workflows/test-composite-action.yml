@@ -1,7 +1,7 @@
 name: composite-action
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
   test-action:
