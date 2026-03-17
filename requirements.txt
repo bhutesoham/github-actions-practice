@@ -4,4 +4,4 @@ bandit
 gunicorn
 pytest
 bandit
-request
+requests
