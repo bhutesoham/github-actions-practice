@@ -2,7 +2,7 @@ name: pr-lifecycle-events
 
 on:
   pull_request:
-    type: [opened, synchronize, reopened, closed]
+    types: [opened, synchronize, reopened, closed]
 
 jobs:
   pr-lifecycle:
@@ -28,5 +28,5 @@ jobs:
 
       - name: Run the step if PR is merged
         # This condition ensures the job only runs if the PR was merged
-        if: github.event.pull_request.merged == true
-        run: echo "PR successfully mereged"
+        if: github.event.action == 'closed' && github.event.pull_request.merged == true
+        run: echo "PR successfully merged"
