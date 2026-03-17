@@ -1,0 +1,10 @@
+name: composite-Action
+
+on:
+  push:
+
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Use actions
+      uses: ./.github/actions/setup-and-greet
