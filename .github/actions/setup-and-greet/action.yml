@@ -1,12 +1,22 @@
 name: "Hello Greet Action"
 description: "Greets someone and says hello"
 inputs:
-  who-to-greet:
+  name:
     description: "Who to greet"
     required: true
     default: "World"
+  language:
+    description: "Greeting language"
+    required: false
+    default: "en"
+
+outputs:
+  greeted:
+    value: ${{ steps.set_output.outputs.greeted }}
+
 runs:
   using: "composite"
+
   steps:
     - name: Print the greeting in english
       shell: bash
@@ -18,5 +28,6 @@ runs:
         echo "Runner OS is $RUNNER_OS"
 
     - name: Set an output
-      outputs:
-        greeted: true
+      id: set_output
+      shell: bash
+      run: echo "greeted=true" >> $GITHUB_OUTPUT
