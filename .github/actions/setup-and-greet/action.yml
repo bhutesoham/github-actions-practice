@@ -23,6 +23,7 @@ runs:
       run: echo "Hello ${{ inputs.who-to-greet }}!"
 
     - name: Print current date and Runner OS
+      shell: bash
       run: |
         echo "Current date is $(date '+%Y-%m-%d-%H-%M-%S')"
         echo "Runner OS is $RUNNER_OS"
