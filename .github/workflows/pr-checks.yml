@@ -23,13 +23,13 @@ jobs:
 
     steps:
       - name: Reads the reference head
-        run: echo "Branch name is "
+        run: echo "Branch name is ${{ github.head_ref }}"
 
       - name: Fails if not pattern is followed
         run: | # Allowed pattern (feature/*, fix/*, or docs/*)
           PATTERN="^(feature|fix|docs)/.*$"
           BRANCH_NAME="${{ github.head_ref }}"
-          if [ ! $BRANCH_NAME =~ $PATTERN ]; then
+          if [[ ! '$BRANCH_NAME' =~ $PATTERN ]]; then
            echo "Error: branch name '$BRANCH_NAME' does not match the required pattern $PATTERN"
            exit 1
           fi
