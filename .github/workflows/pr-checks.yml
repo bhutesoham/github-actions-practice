@@ -2,7 +2,7 @@ name: check-pull_request
 
 on:
   pull_request:
-    branches: [main]
+    types: [opened, synchronize, reopened, closed]
 
 jobs:
   file-size-check:
@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Reads the reference head
-        run: echo "Branch name is "
+        run: echo "Branch name is ${{ github.head_ref }}"
 
       - name: Fails if not pattern is followed
         run: | # Allowed pattern (feature/*, fix/*, or docs/*)
