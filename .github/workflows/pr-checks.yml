@@ -49,6 +49,6 @@ jobs:
         run: echo "${{ github.event.pull_request.body }}"
 
       - name: Warn if PR description is empty
-        if: github.event.pull_request.body == '' || github.event.pull_request.body == null
+        if: github.event.pull_request.body == ' ' || github.event.pull_request.body == null
         run: |
           echo "Warning: The pull request body is empty"
