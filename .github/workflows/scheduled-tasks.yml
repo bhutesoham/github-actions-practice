@@ -1,6 +1,7 @@
 name: Scheduled Tasks
 
 on:
+  workflow_dispatch:
   schedule:
     # Every Monday at 02:30 UTC
     - cron: "30 2 * * 1" #min hrs dayofmonth month dayofweek
